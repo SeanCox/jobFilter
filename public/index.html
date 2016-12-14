@@ -19,6 +19,8 @@
     </nav>
     <div class="container">
       Select Your Skills
+      <button class="btn btn-primary">HTML</button>
+      <button class="btn btn-primary">CSS</button>
       <button class="btn btn-primary">JavaScript</button>
       <button class="btn btn-primary">Ruby</button>
       <button class="btn btn-primary">Python</button>
@@ -27,13 +29,31 @@
     </div>
     <br>
     <div class="container">
-      Matched Jobs
-      <div class="job">
-        This is a job <br>
-        skills are : js <br>
-        pay is : money  <br>
-
-      </div>
+      Locations
+      <button class="btn btn-primary">San Fransisco</button>
+      <button class="btn btn-primary">Los Angeles</button>
+      <button class="btn btn-primary">New York</button>
+      <button class="btn btn-primary">Boston</button>
+      <button class="btn btn-primary">Seattle</button>
+      <button class="btn btn-primary">Portland</button>
+      <button class="btn btn-primary">Austin</button>
+    </div>
+    <br>
+    <div class="container">
+      Experince Level
+      <button class="btn btn-primary">0</button>
+      <button class="btn btn-primary">1-2</button>
+      <button class="btn btn-primary">3-5</button>
+      <button class="btn btn-primary">6-8</button>
+      <button class="btn btn-primary">8+</button>
+    </div>
+    <br>
+    <div class="container">
+      <!-- Filter button should save all button selections to local storage then change pages -->
+      <a href="/results.html" class="btn btn-primary">Filter</a>
     </div>
   </body>
+  <script type="text/javascript">
+    localStorage.setItem("test", [1,2,3])
+  </script>
 </html>
