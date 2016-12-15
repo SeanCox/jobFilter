@@ -50,11 +50,16 @@
     <br>
     <div class="container">
       <!-- Filter button should save all button selections to local storage then change pages -->
+      <button class="btn btn-primary" id="save">Save</button>
       <a href="/results.html" class="btn btn-primary">Filter</a>
     </div>
   </body>
   <script type="text/javascript">
+    const userPrefs = JSON.parse(localStorage.getItem('userPrefs')) || {}
+
     function toggleColor(){
+      let pref = userPrefs[this.innerHTML]
+      pref ? pref = false : pref = true
       if(this.classList.contains('btn-primary')){
         this.classList.remove('btn-primary')
         this.classList.add('btn-success')
@@ -66,7 +71,10 @@
     const buttons = document.querySelectorAll('.btn')
     buttons.forEach(button => button.addEventListener('click', toggleColor))
 
-
-    localStorage.setItem("test", [1,2,3])
+    function updateLocalStoarage(){
+      localStorage.setItem("userPrefs", JSON.stringify(userPrefs))
+    }
+    const saveButton = document.querySelector('#save')
+    saveButton.addEventListener('click', updateLocalStoarage)
   </script>
 </html>

@@ -20,6 +20,6 @@
 <!-- add an Ajax call to get data baised on local storage -->
   </body>
   <script type="text/javascript">
-    console.log(localStorage.getItem("test"))
+    const userPrefs = JSON.parse(localStorage.getItem('userPrefs')) || {}
   </script>
 </html>
