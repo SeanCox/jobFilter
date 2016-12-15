@@ -54,6 +54,19 @@
     </div>
   </body>
   <script type="text/javascript">
+    function toggleColor(){
+      if(this.classList.contains('btn-primary')){
+        this.classList.remove('btn-primary')
+        this.classList.add('btn-success')
+      }else{
+        this.classList.remove('btn-success')
+        this.classList.add('btn-primary')
+      }
+    }
+    const buttons = document.querySelectorAll('.btn')
+    buttons.forEach(button => button.addEventListener('click', toggleColor))
+
+
     localStorage.setItem("test", [1,2,3])
   </script>
 </html>
