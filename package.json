@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SeanCox/jobFilter/issues"
   },
-  "homepage": "https://github.com/SeanCox/jobFilter#readme"
+  "homepage": "https://github.com/SeanCox/jobFilter#readme",
+  "dependencies": {
+    "mongoose": "^4.7.5"
+  }
 }
