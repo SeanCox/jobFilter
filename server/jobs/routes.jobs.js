@@ -7,7 +7,11 @@ router.use('/test', (req, res) => {
 })
 
 router.use('/search', (req, res) => {
-  
+
+})
+
+router.use('/createJob', (req, res) => {
+  controller.createJob(req, res)
 })
 
 module.exports = router
