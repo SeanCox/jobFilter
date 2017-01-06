@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/SeanCox/jobFilter#readme",
   "dependencies": {
+    "axios": "^0.15.3",
     "mongoose": "^4.7.5"
   }
 }

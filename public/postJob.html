@@ -34,7 +34,10 @@
       <button class="btn btn-primary">submit</button>
     </div>
   </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="text/javascript">
+  //import axios from 'axios'
+
   function createPost(){
     const jobPost = {
       "title" : document.querySelector('.title').value,
@@ -44,8 +47,16 @@
       "appLink" : document.querySelector('.appLink').value,
       "discription" : document.querySelector('.discription').value
     }
-    console.log(jobPost)
-  }
+
+    axios.post('/api/jobs/createJob', jobPost)
+      .then(function (response) {
+      console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+        console.log(jobPost)
+      }
 
   const submit = document.querySelector('.btn')
   submit.addEventListener('click', createPost)
