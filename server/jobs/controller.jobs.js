@@ -10,7 +10,7 @@ module.exports = {
     body = JSON.parse(Buffer.concat(body).toString());
 
     if(Jobs.createJob(body.title, body.company, body.city, body.skills, body.discription)){
-      res.status(400).send('record created?')
+      res.status(200).send('record created?')
       }
     })
 
