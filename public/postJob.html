@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-S7YMK1xjUjSpEnF4P8hPUcgjXYLZKK3fQW1j5ObLSl787II9p8RO9XUGehRmKsxd" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="master.css">
+    <meta charset="utf-8">
+    <title>Job Filter</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">jobFilter</a>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="./postJob.html">Post Job</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <input type="text" name="title" value="Job Title" class="title">
+      <br><br>
+      <input type="text" name="company" value="Compnay Name" class="company">
+      <br><br>
+      <input type="text" name="city" value="City" class="city">
+      <br><br>
+      <input type="text" name="skills" value="skills" class="skills">
+      <br><br>
+      <input type="text" name="appLink" value="application Link" class="appLink">
+      <br><br>
+      <input type="text" name="discription" value="Job Discription" class="discription">
+      <br><br>
+      <button class="btn btn-primary">submit</button>
+    </div>
+  </body>
+  <script type="text/javascript">
+  function createPost(){
+    const jobPost = {
+      "title" : document.querySelector('.title').value,
+      "company" : document.querySelector('.company').value,
+      "city" : document.querySelector('.city').value,
+      "skills" : document.querySelector('.skills').value,
+      "appLink" : document.querySelector('.appLink').value,
+      "discription" : document.querySelector('.discription').value
+    }
+    console.log(jobPost)
+  }
+
+  const submit = document.querySelector('.btn')
+  submit.addEventListener('click', createPost)
+
+  </script>
+</html>
