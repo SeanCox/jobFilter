@@ -6,11 +6,11 @@ router.use('/test', (req, res) => {
   res.status(400).send('test route')
 })
 
-router.use('/search', (req, res) => {
+router.get('/search', (req, res) => {
 
 })
 
-router.use('/createJob', (req, res) => {
+router.post('/createJob', (req, res) => {
   controller.createJob(req, res)
 })
 

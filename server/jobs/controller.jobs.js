@@ -2,9 +2,17 @@ const Jobs = require('./model.jobs')
 
 module.exports = {
   createJob : (req, res) => {
-    if(Jobs.createJob(`testS`, `WB`, `LA`, [`A`,`F`], `job is GREAT`)){
+    let body = [];
+    req.on('data', (chunk) => {
+      body.push(chunk)
+    })
+    .on('end', () => {
+    body = JSON.parse(Buffer.concat(body).toString());
+
+    if(Jobs.createJob(body.title, body.company, body.city, body.skills, body.discription)){
       res.status(400).send('record created?')
-    }
+      }
+    })
 
   }
 }
