@@ -55,11 +55,11 @@
     </div>
   </body>
   <script type="text/javascript">
+    localStorage.clear()
     const userPrefs = JSON.parse(localStorage.getItem('userPrefs')) || {}
 
     function toggleColor(){
-      let pref = userPrefs[this.innerHTML]
-      pref ? pref = false : pref = true
+      userPrefs[this.innerHTML] = !userPrefs[this.innerHTML]
       if(this.classList.contains('btn-primary')){
         this.classList.remove('btn-primary')
         this.classList.add('btn-success')
@@ -74,7 +74,7 @@
     function updateLocalStoarage(){
       localStorage.setItem("userPrefs", JSON.stringify(userPrefs))
     }
-    const saveButton = document.querySelector('#save')
-    saveButton.addEventListener('click', updateLocalStoarage)
+    //const saveButton = document.querySelector('#save')
+    save.addEventListener('click', updateLocalStoarage)
   </script>
 </html>
