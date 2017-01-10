@@ -6,8 +6,8 @@ router.use('/test', (req, res) => {
   res.status(400).send('test route')
 })
 
-router.get('/search', (req, res) => {
-
+router.get('/searchJobs', (req, res) => {
+  controller.searchJobs(req, res)
 })
 
 router.post('/createJob', (req, res) => {

@@ -13,13 +13,14 @@ const jobSchema = new Schema({
   discription: String,
 })
 
+const Job = mongoose.model('Job', jobSchema)
+
 function saveToDataBase(record){
   record.save((err, job) => {
     if(err) return console.log(err)
     console.log(`saved a job`)
   })
 }
-const Job = mongoose.model('Job', jobSchema)
 
 function createJob(title, company, city, skills, discription){
   const job = new Job({
@@ -34,4 +35,7 @@ function createJob(title, company, city, skills, discription){
 }
 // console.log(createJob(`testS`, `WB`, `LA`, [`A`,`F`], `job is GREAT`))
 
-module.exports = {createJob}
+
+
+
+module.exports = {createJob, Job}
