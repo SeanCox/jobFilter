@@ -19,31 +19,7 @@
     </nav>
 <!-- add an Ajax call to get data baised on local storage -->
 <div class="container" id="test">
-
+ Welcome to the About page
 </div>
   </body>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script type="text/javascript">
-    const userPrefs = JSON.parse(localStorage.getItem('userPrefs'))
-
-    axios.get('/api/jobs/searchJobs', "OBJECT TO REPACE")
-      .then(function (response) {
-        const list = document.querySelector('#test')
-        let htmlString = ""
-        response.data.forEach(function(job){
-          htmlString += `<div class="post">
-          <p>Job: ${job.title}</p>
-          <p>Company: ${job.company}</p>
-          <p>Location: ${job.location}</p>
-          <p>Skills: ${job.skills}</p>
-          <p>Discription: ${job.discription}</p>
-          </div><br>`
-        })
-        list.innerHTML = htmlString
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
-
-  </script>
 </html>
