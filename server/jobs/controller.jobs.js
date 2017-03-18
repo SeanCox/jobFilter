@@ -1,6 +1,7 @@
 const Jobs = require('./model.jobs')
 
 module.exports = {
+
   createJob : (req, res) => {
     let body = []
     req.on('data', (chunk) => {
@@ -16,15 +17,33 @@ module.exports = {
   },
 
   searchJobs : (req, res) => {
-    //get all jobs
-    //has all skills (job seeker skils, array of jobs){
-    // matches = []
-    // for each array of jobs where seeker has all of job skills push to matches
-    //}
+    let body = []
+    req.on('data', (chunk) => {
+      body.push(chunk)
+    })
+    .on('end', () => {
+      body = JSON.parse(Buffer.concat(body).toString())
+      console.log(body)
+    //req.expLevel
+    //req.skills
+    Jobs.Job.find()
+    	.then(jobs => {
+        //jobs.exp- filter jobs that have req.expLevel into array
+        matches = []
 
-    	Jobs.Job.find()
-    	.then(jobs => res.status(200).send(jobs))
+        jobs.forEach(job => {
+          let flag = true
+          job.skills.forEach(skill => {
+            console.log(body[skill])
+            if(body[skill] != true) flag = false;
+          })
+          if(flag) matches.push(job)
+        })
+
+        res.status(200).send(matches)
+      })
     	.catch(err => console.log(err))
+    })
 
   }
 }

@@ -25,8 +25,9 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="text/javascript">
     const userPrefs = JSON.parse(localStorage.getItem('userPrefs'))
-
-    axios.get('/api/jobs/searchJobs', "OBJECT TO REPACE")
+    
+    
+    axios.post('/api/jobs/searchJobs', userPrefs )
       .then(function (response) {
         const list = document.querySelector('#test')
         let htmlString = ""
