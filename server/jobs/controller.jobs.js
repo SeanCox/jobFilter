@@ -30,7 +30,9 @@ module.exports = {
     	.then(jobs => {
         //jobs.exp- filter jobs that have req.expLevel into array
         matches = []
-
+        matches.push(jobs[0])
+        matches.push(jobs[1])
+        
         jobs.forEach(job => {
           let flag = true
           job.skills.forEach(skill => {

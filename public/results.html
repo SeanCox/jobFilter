@@ -32,7 +32,7 @@
         const list = document.querySelector('#test')
         let htmlString = ""
         response.data.forEach(function(job){
-          htmlString += `<div class="post">
+          htmlString += `<div class="post well">
           <p>Job: ${job.title}</p>
           <p>Company: ${job.company}</p>
           <p>Location: ${job.location}</p>
