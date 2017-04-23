@@ -11,28 +11,25 @@
       <div class="container">
         <a class="navbar-brand" href="./index.html">jobFilter</a>
         <ul class="nav navbar-nav navbar-right">
-          <!--<li><a href="./blog.html">Blog</a></li>-->
+          <li><a href="./blog.html">Blog</a></li>
           <li><a href="./about.html">About</a></li>
           <li><a href="./postJob.html">Post Job</a></li>
         </ul>
       </div>
     </nav>
-      <div class="container">
-        <p>
-          Welcome to the Alpha version of JobFilter. Below is a list of all the jobs in our system.
-        </p>
-        <div class="jobs">
+<!-- add an Ajax call to get data baised on local storage -->
+<div class="container" id="test">
 
-        </div>
-      </div>
-
-    </body>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript">
+</div>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript">
+    const userPrefs = JSON.parse(localStorage.getItem('userPrefs'))
     
-    axios.post('/api/jobs/searchJobs', {})
+    
+    axios.post('/api/jobs/searchJobs', userPrefs )
       .then(function (response) {
-        const list = document.querySelector('.jobs')
+        const list = document.querySelector('#test')
         let htmlString = ""
         response.data.forEach(function(job){
           htmlString += `<div class="post well">

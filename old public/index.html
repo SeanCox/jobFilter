@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-S7YMK1xjUjSpEnF4P8hPUcgjXYLZKK3fQW1j5ObLSl787II9p8RO9XUGehRmKsxd" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="master.css">
+    <meta charset="utf-8">
+    <title>Job Filter</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">jobFilter</a>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./postJob.html">Post Job</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      Select Your Skills
+      <button class="btn btn-primary">HTML</button>
+      <button class="btn btn-primary">CSS</button>
+      <button class="btn btn-primary">JavaScript</button>
+      <button class="btn btn-primary">Ruby</button>
+      <button class="btn btn-primary">Python</button>
+      <button class="btn btn-primary">Java</button>
+      <button class="btn btn-primary">C++</button>
+    </div>
+    <br>
+    <div class="container">
+      Locations
+      <button class="btn btn-primary">San Fransisco</button>
+      <button class="btn btn-primary">Los Angeles</button>
+      <button class="btn btn-primary">New York</button>
+      <button class="btn btn-primary">Boston</button>
+      <button class="btn btn-primary">Seattle</button>
+      <button class="btn btn-primary">Portland</button>
+      <button class="btn btn-primary">Austin</button>
+    </div>
+    <br>
+    <!-- <div class="container">
+      Experince Level
+      <button class="btn btn-primary">0</button>
+      <button class="btn btn-primary">1-2</button>
+      <button class="btn btn-primary">3-5</button>
+      <button class="btn btn-primary">6-8</button>
+      <button class="btn btn-primary">8+</button>
+    </div>
+    <br> -->
+    <div class="container">
+      <!-- Filter button should save all button selections to local storage then change pages -->
+      <button class="btn btn-primary" id="save">Save</button>
+      <a href="/results.html" class="btn btn-primary">Filter</a>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    localStorage.clear()
+    const userPrefs = JSON.parse(localStorage.getItem('userPrefs')) || {}
+
+    function toggleColor(){
+      userPrefs[this.innerHTML] = !userPrefs[this.innerHTML]
+      if(this.classList.contains('btn-primary')){
+        this.classList.remove('btn-primary')
+        this.classList.add('btn-success')
+      }else{
+        this.classList.remove('btn-success')
+        this.classList.add('btn-primary')
+      }
+    }
+    const buttons = document.querySelectorAll('.btn')
+    buttons.forEach(button => button.addEventListener('click', toggleColor))
+
+    function updateLocalStoarage(){
+      localStorage.setItem("userPrefs", JSON.stringify(userPrefs))
+    }
+    //const saveButton = document.querySelector('#save')
+    save.addEventListener('click', updateLocalStoarage)
+  </script>
+</html>

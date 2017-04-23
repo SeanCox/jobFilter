@@ -37,7 +37,7 @@ module.exports = {
           let flag = true
           job.skills.forEach(skill => {
             console.log(body[skill])
-            if(body[skill] != true) flag = false;
+            // if(body[skill] != true) flag = false;
           })
           if(flag) matches.push(job)
         })
