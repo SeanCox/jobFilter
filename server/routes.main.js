@@ -4,7 +4,7 @@ const router = express.Router()
 const users = require('./users/routes.users')
 const jobs = require('./jobs/routes.jobs')
 
-router.use('/', express.static('public'))
+router.use('/', express.static('public/index.html'))
 router.use('/api/users', users)
 router.use('/api/jobs', jobs)
 
