@@ -15,7 +15,10 @@ const keys = require('./_keys')
 const mongoose = require('mongoose')
 const db = mongoose.connection
 
-mongoose.connect(`mongodb://${keys.dbUsername}:${keys.dbPassword}@ds133438.mlab.com:33438/jobfilter`)
+const mongoUser = process.env.dbUsername || keys.dbUsername
+const mongoPass = process.env.dbPassword || keys.dbPassword
+
+mongoose.connect(`mongodb://${mongoUser}:${mongoPass}@ds133438.mlab.com:33438/jobfilter`)
 db.on('error', console.error.bind('connection error:'))
 db.once('open', () => {
 	console.log('database connection established')
