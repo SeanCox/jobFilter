@@ -11,7 +11,7 @@ app.listen(port, ()=>{
 })
 
 // database
-const keys = require('./_keys')
+const keys = require('./_keys') || false
 const mongoose = require('mongoose')
 const db = mongoose.connection
 
