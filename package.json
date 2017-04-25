@@ -2,9 +2,10 @@
   "name": "jobfilter",
   "version": "0.0.1",
   "description": "Job search website",
-  "main": "server/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./server/index.js",
+    "postinstall": "npm install",
+    "start": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
