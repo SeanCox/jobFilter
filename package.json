@@ -4,7 +4,6 @@
   "description": "Job search website",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm install",
     "start": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
